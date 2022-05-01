@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body{
+            text-align:center;
+        }
+        h1 {
+            font-family: Courier New;
+        }
+        #books{
+            width:400px;
+        }
+        .first{
+            background-color:antiquewhite;
+            padding:10px;
+        }
+        .s {
+            background-color:aquamarine;
+            padding: 10px;
+        }
+        p{
+            font-family:Calibri;
+            font-size:30px;
+        }
+        h2 {
+            font-family:Arial;
+        }
+        #myBtn {
+            position: fixed;
+            top: 20px;
+            right: 35px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: grey;
+            border: 3px solid groove;
+            color: white;
+            padding: 15px;
+            width: 200px;
+            border-radius: 4px;
+        }
+
+            #myBtn:hover {
+                background-color: #555;
+            }
+        .f {
+            background-color:lightskyblue;
+            padding: 10px;
+        }
+        .th{
+            background-color:deeppink;
+            padding:10px;
+            color:floralwhite;
+        }
+        ul{
+            text-align:left;
+            font-size:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        Sign the petition now
+    </button>
+    <script>
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        function topFunction() {
+            document.body.scrollTop = 100000;
+            document.documentElement.scrollTop = 100000;
+        }
+    </script>
+    <div class="first">
+        <h1>
+            <u>
+                Printed Books Petition
+            </u>
+        </h1>
+
+        <p id="p">
+
+        </p>
+
+        <script type="text/javascript">
+            var txt = "Hello and welcome to our pettition of saving the printed books from dissapearing...";
+            var i = 0;
+            var speed = 50;
+            function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("p").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            typeWriter()
+        </script>
+        <img src="image/books.jpg" id="books" />
+    </div>
+    <div class="s">
+        <h2>
+            Who we are?
+        </h2>
+        <p style="text-align:left; width:95%; margin-left:2%">
+            We are 11th grade students from De-Shalit high school that want to make a change in our world!
+            <br />
+            Our Names: Adar, Amihai, Lital
+            <br />
+            In the past year, we have done a research paper about the future of the printed world.
+            <br />
+            <br />
+            <b>The research question was:</b>
+            <br />
+            Will the two medias continue to live on or will one dominate the other? What will the implications be? Which factors/ ethnic differences could make people more likely to choose one over the other?
+        </p>
+    </div>
+    <div class="f">
+        <h2>A Graph of total circulation of U.S. daily newspapers in the years 1940 - 2020</h2>
+        <img src="image/graph.png" />
+        <p style="font-size:25px;">Considering this information, it seems that in the next 35 years newspapers estimated circulation will go down by 90% !!</p>
+
+    </div>
+    <div class="th">
+        <h2>
+            We conducted a survey where we asked questions such as:
+        </h2>
+        <ul>
+            <li>
+                Do the participants read printed newspapers?
+            </li>
+            <li>
+                Did they visit a news site recently?
+            </li>
+            <li>
+                Which news format they prefer?
+            </li>
+        </ul>
+        <h2>
+            The survey answers:
+        </h2>
+        <ul>
+            <li>
+                Only 10% of teenagers under the age of 18 said that they have read a newspaper recently
+            </li>
+            <li>
+                A crushing majority of people visited a news site in the last 2 days
+            </li>
+            <li>
+                More than 65% explicitly said that they prefer electronic news over printed newspapers
+            </li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    <form action="">
+        <table style="margin-left:35%; width:30%">
+            <tr>
+                <td style="font-size:20px; font-family:Arial;">
+                    Enter your name
+                </td>
+                <td>
+                    <input type="text" id="name" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding:20px;">
+                    <button value="Sign Now" onclick="check()"> Sign Now </button>
+</td>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript">
+        function check(){
+            name = document.getElementById("name").value;
+            var t = true
+            for (var i = 0; i < name.length; i++) {
+                if (!((name[i] >= 'a' && name[i] <= 'z') || (name[i] >= 'A' && name[i] <= 'Z'))) {
+                    t = false;
+                }
+            }
+            if (t && name!="") {
+                window.alert("Thank you for sign this important pettition!")
+            }
+            else {
+                alert("your name is incorrect")
+            }
+        }
+    </script>
+    <br />
+    <br />
+</body>
+</html>
